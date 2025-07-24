@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import AdminLayout from '@/react-app/components/admin/AdminLayout';
 import { Plus, Edit, Trash2, Eye, EyeOff, Search, Filter } from 'lucide-react';
 
@@ -54,7 +54,6 @@ const mockPosts: BlogPost[] = [
 
 export default function AdminBlog() {
   const [posts, setPosts] = useState<BlogPost[]>(mockPosts);
-  const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterCategory, setFilterCategory] = useState('all');
   const [showModal, setShowModal] = useState(false);
