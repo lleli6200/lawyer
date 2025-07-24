@@ -1,4 +1,4 @@
-import { Building2, Users, Briefcase, Home, Car, Heart, ArrowRight } from 'lucide-react';
+import { Building2, Users, Briefcase, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router';
 
 export default function Services() {
