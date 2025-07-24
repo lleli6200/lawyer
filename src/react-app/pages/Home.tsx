@@ -4,7 +4,6 @@ import About from '@/react-app/components/About';
 import Services from '@/react-app/components/Services';
 import Team from '@/react-app/components/Team';
 import Blog from '@/react-app/components/Blog';
-import Contact from '@/react-app/components/Contact';
 import Footer from '@/react-app/components/Footer';
 import WhatsAppFloat from '@/react-app/components/WhatsAppFloat';
 
@@ -17,7 +16,6 @@ export default function Home() {
       <Services />
       <Team />
       <Blog />
-      <Contact />
       <Footer />
       <WhatsAppFloat />
     </div>
