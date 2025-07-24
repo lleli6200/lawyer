@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Scale, Menu, X } from 'lucide-react';
 import { Link } from 'react-router';
-import { useSiteSettings } from '@/react-app/hooks/useSiteSettings';
 
 export default function Header() {
-  const { getSetting } = useSiteSettings();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 

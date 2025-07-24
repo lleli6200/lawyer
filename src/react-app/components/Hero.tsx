@@ -1,8 +1,6 @@
-import { ArrowRight, Award, Users, Clock } from 'lucide-react';
-import { useSiteSettings } from '@/react-app/hooks/useSiteSettings';
+import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
-  const { getSetting } = useSiteSettings();
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Elements */}

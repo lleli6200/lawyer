@@ -1,8 +1,6 @@
 import { CheckCircle, Scale, Shield, Users } from 'lucide-react';
-import { useSiteSettings } from '@/react-app/hooks/useSiteSettings';
 
 export default function About() {
-  const { getSetting } = useSiteSettings();
   const values = [
     {
       icon: Scale,
