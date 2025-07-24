@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import AdminLayout from '@/react-app/components/admin/AdminLayout';
 import { Save, Palette, Settings as SettingsIcon, Globe } from 'lucide-react';
 
@@ -27,7 +27,6 @@ const mockSettings: SiteSettings = {
 
 export default function AdminSettings() {
   const [settings, setSettings] = useState<SiteSettings>(mockSettings);
-  const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [activeTab, setActiveTab] = useState('general');
 
