@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import SSTHeader from '@/react-app/components/SSTHeader';
 import Footer from '@/react-app/components/Footer';
 import WhatsAppFloat from '@/react-app/components/WhatsAppFloat';
-import { HardHat, Shield, FileCheck, Users, Award, Clock, ArrowRight, CheckCircle } from 'lucide-react';
+import { HardHat, Shield, FileCheck, Award, ArrowRight, CheckCircle } from 'lucide-react';
 
 export default function SSTPage() {
   useEffect(() => {
