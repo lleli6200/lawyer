@@ -125,13 +125,6 @@ export default function Footer() {
               </p>
           </div>
         </div>
-
-        {/* Bottom Message */}
-        <div className="border-t border-gray-800 py-6 text-center">
-          <p className="text-blue-400 font-semibold text-sm italic">
-            "Soluções personalizadas para cada cliente!"
-          </p>
-        </div>
       </div>
     </footer>
   );

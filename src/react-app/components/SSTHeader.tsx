@@ -21,7 +21,6 @@ export default function SSTHeader() {
     { name: 'SST', href: '/sst' },
     { name: 'Equipe', href: '/#team' },
     { name: 'Blog', href: '/#blog' },
-    { name: 'Contato', href: '/#contact' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -29,15 +28,7 @@ export default function SSTHeader() {
     
     if (href.startsWith('/#')) {
       // Para links com âncora, navegar para a home e depois para a seção
-      const section = href.substring(2);
-      if (window.location.pathname !== '/') {
-        window.location.href = href;
-      } else {
-        const element = document.getElementById(section);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+      window.location.href = href;
     }
   };
 
@@ -91,16 +82,6 @@ export default function SSTHeader() {
                 </a>
               )
             ))}
-            <a
-              href="/#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('/#contact');
-              }}
-              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-400 hover:to-blue-500 transition-all duration-200 shadow-lg hover:shadow-xl"
-            >
-              Entrar em Contato
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -150,16 +131,6 @@ export default function SSTHeader() {
                   </a>
                 )
               ))}
-              <a
-                href="/#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('/#contact');
-                }}
-                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-400 hover:to-blue-500 transition-all duration-200 shadow-lg mt-4"
-              >
-                Entrar em Contato
-              </a>
             </div>
           </div>
         )}
