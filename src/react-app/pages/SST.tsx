@@ -173,7 +173,7 @@ export default function SSTPage() {
               <img
                 src="/images/fer.png"
                 alt="Fernando Brasil"
-                className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+                className="w-full h-96 object-cover object-center rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-6 rounded-xl shadow-xl">
                 <h4 className="font-bold text-lg mb-2">Especialização</h4>
