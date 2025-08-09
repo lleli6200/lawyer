@@ -4,9 +4,9 @@ export default function Team() {
   const team = [
     {
       name: "Carlos Giovani Fernandes",
-      role: "Sócio Fundador - Advogado",
+      role: "Advogado",
       specialization: "Direito Empresarial, Saúde e segurança e meio ambiente",
-      experience: "19 anos de experiência em SST, 3 anos como Advogado",
+      experience: "Especialista em consultivo empresarial",
       education: "Técnico em Segurança do Trabalho e Advogado",
       achievements: [
         "Técnico em Segurança do Trabalho desde 2005",
@@ -27,6 +27,20 @@ export default function Team() {
         "Especialista em ligação SST e Operação"
       ],
       image: "/images/fer.png"
+    },
+    {
+      name: "Leandro Moreira Evangelista",
+      role: "Engenheiro de Segurança do Trabalho",
+      specialization: "Gestão de Riscos Ocupacionais e Prevenção de Acidentes",
+      experience: "20 anos de experiência na área",
+      education: "Engenheiro de Segurança do Trabalho - UFMG (2004)",
+      achievements: [
+        "Gestão de riscos ocupacionais",
+        "Prevenção de acidentes de trabalho",
+        "Promoção da saúde no ambiente de trabalho",
+        "Criação de espaços laborais seguros e produtivos"
+      ],
+      image: "/images/WhatsApp Image 2025-07-24 at 14.56.52.jpeg"
     }
   ];
 
@@ -49,7 +63,7 @@ export default function Team() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {team.map((member, index) => (
             <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
               <div className="relative">

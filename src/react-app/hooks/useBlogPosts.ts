@@ -108,10 +108,190 @@ A guarda compartilhada é a regra, sendo aplicada sempre que possível. A unilat
     read_time: "4 min",
     created_at: "2024-01-05T09:15:00Z",
     updated_at: "2024-01-05T09:15:00Z"
+  },
+  {
+    id: 4,
+    title: "NR-35: Trabalho em Altura - Principais Requisitos de Segurança",
+    slug: "nr-35-trabalho-altura-requisitos-seguranca",
+    excerpt: "Conheça os principais requisitos da NR-35 para trabalho em altura e como implementar medidas de segurança eficazes.",
+    content: `## Introdução à NR-35
+
+A Norma Regulamentadora 35 (NR-35) estabelece os requisitos mínimos e as medidas de proteção para o trabalho em altura, envolvendo o planejamento, a organização e a execução, de forma a garantir a segurança e a saúde dos trabalhadores.
+
+## O que é considerado trabalho em altura?
+
+Considera-se trabalho em altura toda atividade executada acima de 2,00 m (dois metros) do nível inferior, onde haja risco de queda.
+
+### Principais Medidas de Proteção
+
+**1. Medidas de Proteção Coletiva**
+- Sistemas de proteção contra quedas
+- Guarda-corpos e sistemas de proteção
+- Plataformas de trabalho seguras
+
+**2. Medidas de Proteção Individual**
+- Cinturão de segurança tipo paraquedista
+- Capacetes de segurança
+- Calçados de segurança com solado antiderrapante
+
+**3. Treinamento e Capacitação**
+- Treinamento específico para trabalho em altura
+- Reciclagem a cada 2 anos
+- Avaliação médica específica
+
+## Responsabilidades do Empregador
+
+- Garantir a implementação das medidas de proteção
+- Assegurar a realização da Análise de Risco (AR)
+- Desenvolver procedimento operacional para as atividades
+- Assegurar que todo trabalhador receba treinamento
+
+## Conclusão
+
+O cumprimento da NR-35 é fundamental para prevenir acidentes graves e fatais relacionados ao trabalho em altura, protegendo a vida dos trabalhadores.`,
+    author: "Leandro Moreira Evangelista",
+    category: "Saúde e Segurança",
+    image_url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    tags: ["NR-35", "Trabalho em Altura", "Segurança", "Prevenção"],
+    is_published: true,
+    read_time: "6 min",
+    created_at: "2024-01-20T16:00:00Z",
+    updated_at: "2024-01-20T16:00:00Z"
+  },
+  {
+    id: 5,
+    title: "Programa de Gerenciamento de Riscos (PGR): Como Implementar na sua Empresa",
+    slug: "programa-gerenciamento-riscos-pgr-implementar",
+    excerpt: "Entenda como implementar o Programa de Gerenciamento de Riscos (PGR) e garantir a segurança dos trabalhadores.",
+    content: `## O que é o PGR?
+
+O Programa de Gerenciamento de Riscos (PGR) é um conjunto de medidas de prevenção que visa preservar a saúde e integridade dos trabalhadores através da antecipação, reconhecimento, avaliação e controle da ocorrência de riscos ambientais.
+
+## Estrutura do PGR
+
+### 1. Inventário de Riscos
+- Identificação de todos os riscos presentes no ambiente de trabalho
+- Mapeamento das atividades e processos
+- Classificação dos riscos por categoria
+
+### 2. Plano de Ação
+- Medidas de prevenção e controle
+- Cronograma de implementação
+- Responsáveis pelas ações
+- Recursos necessários
+
+### 3. Monitoramento
+- Acompanhamento da eficácia das medidas
+- Revisões periódicas do programa
+- Indicadores de desempenho
+
+## Benefícios da Implementação
+
+**Para a Empresa:**
+- Redução de acidentes e doenças ocupacionais
+- Diminuição de custos com afastamentos
+- Melhoria da produtividade
+- Conformidade legal
+
+**Para os Trabalhadores:**
+- Ambiente de trabalho mais seguro
+- Redução de riscos à saúde
+- Maior conscientização sobre segurança
+
+## Passos para Implementação
+
+1. **Diagnóstico inicial** - Avaliação da situação atual
+2. **Planejamento** - Definição de objetivos e metas
+3. **Implementação** - Execução das medidas planejadas
+4. **Monitoramento** - Acompanhamento dos resultados
+5. **Revisão** - Ajustes e melhorias contínuas
+
+## Conclusão
+
+O PGR é uma ferramenta essencial para a gestão da segurança e saúde no trabalho, contribuindo para a criação de ambientes laborais mais seguros e saudáveis.`,
+    author: "Fernando Brasil",
+    category: "Saúde e Segurança",
+    image_url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    tags: ["PGR", "Gerenciamento de Riscos", "SST", "Prevenção"],
+    is_published: true,
+    read_time: "8 min",
+    created_at: "2024-01-25T11:30:00Z",
+    updated_at: "2024-01-25T11:30:00Z"
+  },
+  {
+    id: 6,
+    title: "CIPA: Importância e Funcionamento da Comissão Interna de Prevenção de Acidentes",
+    slug: "cipa-comissao-interna-prevencao-acidentes",
+    excerpt: "Saiba como funciona a CIPA e qual sua importância na prevenção de acidentes de trabalho.",
+    content: `## O que é a CIPA?
+
+A Comissão Interna de Prevenção de Acidentes (CIPA) é uma comissão constituída por representantes dos empregados e empregadores, com o objetivo de prevenir acidentes e doenças decorrentes do trabalho.
+
+## Objetivos da CIPA
+
+### Principais Finalidades
+- Observar e relatar condições de risco nos ambientes de trabalho
+- Solicitar medidas para reduzir ou eliminar riscos
+- Discutir acidentes ocorridos e suas causas
+- Promover a conscientização sobre prevenção de acidentes
+
+## Composição da CIPA
+
+### Representantes dos Empregados
+- Eleitos pelos trabalhadores em votação secreta
+- Mandato de um ano, permitida uma reeleição
+- Estabilidade no emprego desde a candidatura até um ano após o mandato
+
+### Representantes dos Empregadores
+- Indicados pelo empregador
+- Mesmo número de representantes dos empregados
+
+## Atribuições dos Cipeiros
+
+**Identificação de Riscos:**
+- Realizar inspeções nos locais de trabalho
+- Identificar situações de risco
+- Propor medidas preventivas
+
+**Investigação de Acidentes:**
+- Participar da investigação de acidentes
+- Analisar causas e propor soluções
+- Acompanhar a implementação de medidas corretivas
+
+**Educação e Treinamento:**
+- Promover campanhas de segurança
+- Orientar trabalhadores sobre prevenção
+- Participar de treinamentos específicos
+
+## Reuniões da CIPA
+
+- Reuniões ordinárias mensais
+- Reuniões extraordinárias quando necessário
+- Atas de todas as reuniões
+- Participação de técnicos quando necessário
+
+## Benefícios da CIPA Ativa
+
+- Redução significativa de acidentes
+- Melhoria do clima organizacional
+- Maior conscientização sobre segurança
+- Cumprimento das obrigações legais
+
+## Conclusão
+
+A CIPA é fundamental para a prevenção de acidentes e promoção da segurança no trabalho, sendo uma ferramenta essencial para empresas comprometidas com a saúde de seus colaboradores.`,
+    author: "Carlos Giovani Fernandes",
+    category: "Saúde e Segurança",
+    image_url: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    tags: ["CIPA", "Prevenção de Acidentes", "Segurança do Trabalho", "NR-5"],
+    is_published: true,
+    read_time: "7 min",
+    created_at: "2024-01-30T14:15:00Z",
+    updated_at: "2024-01-30T14:15:00Z"
   }
 ];
 
-const mockCategories = ["Direito Trabalhista", "Direito Digital", "Direito de Família", "Direito Empresarial"];
+const mockCategories = ["Direito Trabalhista", "Direito Digital", "Direito de Família", "Direito Empresarial", "Saúde e Segurança"];
 
 export function useBlogPosts(category?: string) {
   const [posts, setPosts] = useState<BlogPost[]>([]);
