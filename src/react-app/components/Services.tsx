@@ -1,4 +1,5 @@
 import { Building2, Users, Briefcase, ArrowRight } from 'lucide-react';
+import { HardHat, Shield, FileCheck } from 'lucide-react';
 import { Link } from 'react-router';
 
 export default function Services() {
@@ -23,6 +24,26 @@ export default function Services() {
     }
   ];
 
+  const sstServices = [
+    {
+      icon: HardHat,
+      title: "Treinamentos em SST",
+      description: "Os treinamentos de Segurança e Saúde no Trabalho (SST) são cruciais para a prevenção de acidentes e doenças ocupacionais, além de promoverem um ambiente de trabalho mais seguro e produtivo.",
+      features: ["Treinamentos Específicos", "Conscientização Equipes", "Capacitação Gestores", "Normas Regulamentadoras"]
+    },
+    {
+      icon: Shield,
+      title: "Gerenciamento de Riscos em SST",
+      description: "O gerenciamento de riscos em Segurança e Saúde no Trabalho (SST) é crucial para a prevenção de acidentes e doenças ocupacionais, promovendo um ambiente de trabalho mais seguro e saudável.",
+      features: ["Identificação de Riscos", "Avaliação e Controle", "Conformidade Legal", "Proteção Trabalhadores"]
+    },
+    {
+      icon: FileCheck,
+      title: "Avaliações Ambientais em SST",
+      description: "As avaliações ambientais em Segurança e Saúde no Trabalho (SST) são cruciais para identificar e controlar riscos ambientais, prevenindo doenças ocupacionais e acidentes.",
+      features: ["Análise Ambiental", "Controle de Riscos", "Prevenção Doenças", "Proteção Ambiental"]
+    }
+  ];
   return (
     <section id="services" className="py-20 relative overflow-hidden">
       {/* Background */}
@@ -94,6 +115,42 @@ export default function Services() {
               Oferecemos também serviços especializados em Saúde e Segurança do Trabalho, 
               incluindo treinamentos, gerenciamento de riscos e avaliações ambientais.
             </p>
+            
+            {/* SST Services Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+              {sstServices.map((service, index) => (
+                <div key={index} className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-4 text-center group-hover:text-blue-400 transition-colors">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-gray-300 mb-6 leading-relaxed text-center">
+                    {service.description}
+                  </p>
+                  
+                  <div className="space-y-2 mb-6">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                        <span className="text-gray-400 text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <button className="w-full bg-transparent border border-blue-500/30 text-blue-400 py-3 rounded-lg font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2 group">
+                    <span>Saiba Mais</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              ))}
+            </div>
+            
             <Link
               to="/sst"
               className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-400 hover:to-blue-500 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 flex items-center space-x-2 mx-auto inline-flex"
