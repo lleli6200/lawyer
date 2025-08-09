@@ -27,7 +27,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-          Na CFL Centro de Soluções Empresariais, oferecemos consultoria jurídica e gestão de Saúde, Segurança e Meio Ambiente. (SSMA). Garantimos crescimento sustentável e práticas alinhadas aos requisitos legais.
+          Na CFL Centro de Soluções Empresariais, oferecemos consultoria jurídica e gestão de Saúde, Segurança e Meio Ambiente (SSMA). Garantimos crescimento sustentável e práticas alinhadas aos requisitos legais.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
