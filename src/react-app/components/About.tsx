@@ -21,7 +21,7 @@ export default function About() {
 
   const achievements = [
     "Centro de soluções fundado com foco empresarial",
-    "Especialização em Direito Empresarial e SST",
+    "Especialização em Direito Empresarial, Saúde e segurança e meio ambiente",
     "Consultoria personalizada para cada cliente",
     "Equipe multidisciplinar qualificada",
     "Atuação preventiva e consultiva",

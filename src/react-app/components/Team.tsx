@@ -5,7 +5,7 @@ export default function Team() {
     {
       name: "Carlos Giovani Fernandes",
       role: "Sócio Fundador - Advogado",
-      specialization: "Direito Empresarial e SST",
+      specialization: "Direito Empresarial, Saúde e segurança e meio ambiente",
       experience: "19 anos de experiência em SST, 3 anos como Advogado",
       education: "Técnico em Segurança do Trabalho e Advogado",
       achievements: [
@@ -13,7 +13,7 @@ export default function Team() {
         "Especialista em consultivo empresarial",
         "Experiência em diversos segmentos industriais"
       ],
-      image: "/images/Captura de tela 2025-07-24 111413.png"
+      image: "/images/WhatsApp Image 2025-07-29 at 13.59.45 copy.jpeg"
     },
     {
       name: "Fernando Brasil",
