@@ -13,7 +13,8 @@ export default function Team() {
         "Especialista em consultivo empresarial",
         "Experiência em diversos segmentos industriais"
       ],
-      image: "/images/WhatsApp Image 2025-07-29 at 13.59.45 copy.jpeg"
+      image: "/images/WhatsApp Image 2025-07-29 at 13.59.45 copy.jpeg",
+      imagePosition: "object-[center_20%]"
     },
     {
       name: "Fernando Brasil",
@@ -26,7 +27,8 @@ export default function Team() {
         "Visão estratégica de operacionalização",
         "Especialista em ligação SST e Operação"
       ],
-      image: "/images/fer.png"
+      image: "/images/fer.png",
+      imagePosition: "object-[center_20%]"
     },
     {
       name: "Leandro Moreira Evangelista",
@@ -40,7 +42,8 @@ export default function Team() {
         "Promoção da saúde no ambiente de trabalho",
         "Criação de espaços laborais seguros e produtivos"
       ],
-      image: "/images/WhatsApp Image 2025-07-24 at 14.56.52.jpeg"
+      image: "/images/WhatsApp Image 2025-07-24 at 14.56.52.jpeg",
+      imagePosition: "object-[center_30%]"
     }
   ];
 
@@ -70,7 +73,7 @@ export default function Team() {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-64 object-cover ${member.imagePosition} group-hover:scale-105 transition-transform duration-500`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">

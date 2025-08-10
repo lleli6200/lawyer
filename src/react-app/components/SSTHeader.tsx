@@ -42,9 +42,11 @@ export default function SSTHeader() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-2 rounded-lg">
-              <Scale className="w-8 h-8 text-white" />
-            </div>
+            <img 
+              src="/images/WhatsApp Image 2025-07-24 at 12.11.39-Photoroom.png" 
+              alt="CFL Logo" 
+              className="w-12 h-12 object-contain"
+            />
             <div>
               <h1 className="text-2xl font-bold text-white">
                 CFL

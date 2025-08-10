@@ -26,9 +26,11 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-2 rounded-lg">
-                <Scale className="w-8 h-8 text-white" />
-              </div>
+              <img 
+                src="/images/WhatsApp Image 2025-07-24 at 12.11.39-Photoroom.png" 
+                alt="CFL Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <div>
                 <h3 className="text-2xl font-bold text-white">CFL</h3>
                 <p className="text-xs text-blue-400 uppercase tracking-wide">Centro de Soluções</p>
