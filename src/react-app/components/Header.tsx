@@ -38,7 +38,7 @@ export default function Header() {
               <img 
                 src="/images/WhatsApp Image 2025-07-24 at 12.11.39-Photoroom.png" 
                 alt="CFL Logo" 
-                className="w-20 h-20 object-contain"
+                className="w-12 h-12 object-contain"
               />
             </div>
 
