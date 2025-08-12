@@ -41,20 +41,12 @@ export default function SSTHeader() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center">
             <img 
               src="/images/WhatsApp Image 2025-07-24 at 12.11.39-Photoroom.png" 
               alt="CFL Logo" 
               className="w-12 h-12 object-contain"
             />
-            <div>
-              <h1 className="text-2xl font-bold text-white">
-                CFL
-              </h1>
-              <p className="text-xs text-blue-400 uppercase tracking-wide">
-                Centro de Soluções
-              </p>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}

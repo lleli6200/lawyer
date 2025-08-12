@@ -72,20 +72,12 @@ export default function Header() {
                 )
               ))}
             </div>
-
+          <div className="flex items-center">
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white hover:text-yellow-500 transition-colors"
-              >
-                {isMenuOpen ? (
-                  <X className="w-6 h-6" />
-                ) : (
-                  <Menu className="w-6 h-6" />
-                )}
-              </button>
-            </div>
           </div>
 
           {/* Mobile Navigation */}

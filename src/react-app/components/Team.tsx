@@ -34,7 +34,7 @@ export default function Team() {
       name: "Leandro Moreira Evangelista",
       role: "Engenheiro de Segurança do Trabalho",
       specialization: "Gestão de Riscos Ocupacionais e Prevenção de Acidentes",
-      experience: "20 anos de experiência na área",
+      experience: "Especialista em gestão de riscos ocupacionais",
       education: "Engenheiro de Segurança do Trabalho - UFMG (2004)",
       achievements: [
         "Gestão de riscos ocupacionais",
@@ -43,7 +43,7 @@ export default function Team() {
         "Criação de espaços laborais seguros e produtivos"
       ],
       image: "/images/WhatsApp Image 2025-07-24 at 14.56.52.jpeg",
-      imagePosition: "object-[center_30%]"
+      imagePosition: "object-[center_50%]"
     }
   ];
 
