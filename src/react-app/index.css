@@ -62,3 +62,7 @@ body {
 .animate-pulse-green {
   animation: pulse-green 2s infinite;
 }
+
+w-logo{
+  width: 70%;
+}
