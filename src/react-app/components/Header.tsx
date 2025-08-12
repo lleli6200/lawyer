@@ -40,14 +40,6 @@ export default function Header() {
                 alt="CFL Logo" 
                 className="w-12 h-12 object-contain"
               />
-              <div>
-                <h1 className="text-2xl font-bold text-white">
-                  CFL
-                </h1>
-                <p className="text-xs text-blue-400 uppercase tracking-wide">
-                  Centro de Soluções
-                </p>
-              </div>
             </div>
 
             {/* Desktop Navigation */}
