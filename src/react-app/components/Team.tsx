@@ -43,7 +43,7 @@ export default function Team() {
         "Criação de espaços laborais seguros e produtivos"
       ],
       image: "/images/WhatsApp Image 2025-07-24 at 14.56.52.jpeg",
-      imagePosition: "object-[center_50%]"
+      imagePosition: "object-[center_70%]"
     }
   ];
 
