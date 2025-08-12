@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Scale, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router';
 
 export default function Header() {
