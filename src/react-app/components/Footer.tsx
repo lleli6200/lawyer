@@ -29,7 +29,7 @@ export default function Footer() {
               <img 
                 src="/images/WhatsApp Image 2025-07-24 at 12.11.39-Photoroom.png" 
                 alt="CFL Logo" 
-                className="w-14 h-14 object-contain"
+                className="w-20 h-20 object-contain"
               />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
