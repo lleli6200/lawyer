@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router';
-import { Scale, LayoutDashboard, FileText, Settings, LogOut, Menu, X } from 'lucide-react';
+import { LayoutDashboard, FileText, Settings, LogOut, Menu, X } from 'lucide-react';
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -87,11 +87,13 @@ export default function AdminLayout({ children, title }: AdminLayoutProps) {
       <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-gray-900 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0`}>
         <div className="flex items-center justify-between h-16 px-6 bg-gray-800">
           <div className="flex items-center space-x-3">
-            <div className="bg-gradient-to-br from-yellow-400 to-yellow-600 p-2 rounded-lg">
-              <Scale className="w-6 h-6 text-gray-900" />
-            </div>
+            <img 
+              src="/images/WhatsApp Image 2025-07-24 at 12.11.39-Photoroom.png" 
+              alt="CFL Logo" 
+              className="w-12 h-12 object-contain"
+            />
             <div>
-              <h1 className="text-lg font-bold text-white">OLYMPUS</h1>
+              <h1 className="text-lg font-bold text-white">CFL</h1>
               <p className="text-xs text-yellow-500 uppercase tracking-wide">Admin</p>
             </div>
           </div>

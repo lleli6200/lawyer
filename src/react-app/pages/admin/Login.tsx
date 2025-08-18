@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { Scale, Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff } from 'lucide-react';
 
 export default function AdminLogin() {
   const [formData, setFormData] = useState({
@@ -46,11 +46,13 @@ export default function AdminLogin() {
         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center space-x-3 mb-6">
-              <div className="bg-gradient-to-br from-yellow-400 to-yellow-600 p-3 rounded-lg">
-                <Scale className="w-8 h-8 text-gray-900" />
-              </div>
+              <img 
+                src="/images/WhatsApp Image 2025-07-24 at 12.11.39-Photoroom.png" 
+                alt="CFL Logo" 
+                className="w-16 h-16 object-contain"
+              />
               <div>
-                <h1 className="text-2xl font-bold text-white">OLYMPUS</h1>
+                <h1 className="text-2xl font-bold text-white">CFL</h1>
                 <p className="text-xs text-yellow-500 uppercase tracking-wide">Admin</p>
               </div>
             </div>
