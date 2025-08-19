@@ -17,7 +17,7 @@ interface BlogPost {
 }
 
 // Mock data for development
-const mockPosts: BlogPost[] = [
+let mockPosts: BlogPost[] = [
   {
     id: 1,
     title: "Reforma Trabalhista: O que mudou para as empresas",
@@ -294,24 +294,34 @@ A CIPA é fundamental para a prevenção de acidentes e promoção da segurança
 const mockCategories = ["Direito Trabalhista", "Direito Digital", "Direito de Família", "Direito Empresarial", "Saúde e Segurança"];
 
 // Global posts state for admin management
-let globalPosts = [...mockPosts];
+let globalPosts: BlogPost[] = [...mockPosts];
 
 export function updateGlobalPosts(newPosts: BlogPost[]) {
   globalPosts = [...newPosts];
+  mockPosts = [...newPosts]; // Sync with mockPosts
 }
 
 export function addGlobalPost(post: BlogPost) {
   globalPosts = [post, ...globalPosts];
+  mockPosts = [post, ...mockPosts]; // Sync with mockPosts
 }
 
 export function updateGlobalPost(updatedPost: BlogPost) {
   globalPosts = globalPosts.map(post => 
     post.id === updatedPost.id ? updatedPost : post
   );
+  mockPosts = mockPosts.map(post => 
+    post.id === updatedPost.id ? updatedPost : post
+  );
 }
 
 export function deleteGlobalPost(postId: number) {
   globalPosts = globalPosts.filter(post => post.id !== postId);
+  mockPosts = mockPosts.filter(post => post.id !== postId);
+}
+
+export function getGlobalPosts() {
+  return [...globalPosts];
 }
 
 export function useBlogPosts(category?: string) {
