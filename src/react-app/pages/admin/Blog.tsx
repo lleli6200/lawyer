@@ -4,7 +4,7 @@ import { Plus, Edit, Trash2, Eye, EyeOff, Search, Filter, Settings, Calendar, Us
 import ImageUpload from '@/react-app/components/admin/ImageUpload';
 import RichTextEditor from '@/react-app/components/admin/RichTextEditor';
 import CategoryManager from '@/react-app/components/admin/CategoryManager';
-import { useBlogPosts, addGlobalPost, updateGlobalPost, deleteGlobalPost, getGlobalPosts } from '@/react-app/hooks/useBlogPosts';
+import { useBlogPosts } from '@/react-app/hooks/useBlogPosts';
 
 interface Category {
   id: number;
@@ -41,8 +41,8 @@ const mockCategories: Category[] = [
 ];
 
 export default function AdminBlog() {
+  const { posts: initialPosts, loading: postsLoading } = useBlogPosts();
   const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState<Category[]>(mockCategories);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterCategory, setFilterCategory] = useState('all');
@@ -62,16 +62,12 @@ export default function AdminBlog() {
     read_time: ''
   });
 
-  // Load posts on component mount
-  useEffect(() => {
-    const loadPosts = () => {
-      const globalPosts = getGlobalPosts();
-      setPosts(globalPosts);
-      setLoading(false);
-    };
-    
-    loadPosts();
-  }, []);
+  // Sync with initial posts from hook
+  useState(() => {
+    if (!postsLoading && initialPosts.length > 0) {
+      setPosts(initialPosts);
+    }
+  }, [initialPosts, postsLoading]);
 
   const tabs = [
     { id: 'posts', label: 'Posts', icon: Edit },
@@ -102,9 +98,12 @@ export default function AdminBlog() {
     try {
       if (editingPost) {
         // Update existing post
-        const updatedPost = { ...editingPost, ...postData, updated_at: new Date().toISOString() };
-        updateGlobalPost(updatedPost);
-        setPosts(getGlobalPosts());
+        const updatedPosts = posts.map(post => 
+          post.id === editingPost.id 
+            ? { ...post, ...postData, updated_at: new Date().toISOString() }
+            : post
+        );
+        setPosts(updatedPosts);
       } else {
         // Create new post
         const newPost: BlogPost = {
@@ -113,8 +112,7 @@ export default function AdminBlog() {
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString()
         };
-        addGlobalPost(newPost);
-        setPosts(getGlobalPosts());
+        setPosts([newPost, ...posts]);
       }
       
       alert(editingPost ? 'Post atualizado com sucesso!' : 'Post criado com sucesso!');
@@ -130,8 +128,8 @@ export default function AdminBlog() {
     if (!confirm('Tem certeza que deseja excluir este post?')) return;
 
     try {
-      deleteGlobalPost(id);
-      setPosts(getGlobalPosts());
+      const updatedPosts = posts.filter(post => post.id !== id);
+      setPosts(updatedPosts);
       alert('Post excluído com sucesso!');
     } catch (error) {
       console.error('Error deleting post:', error);

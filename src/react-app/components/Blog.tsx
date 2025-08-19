@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const { posts, loading: postsLoading, error } = useBlogPosts(selectedCategory);
+  const { posts, loading: postsLoading } = useBlogPosts(selectedCategory);
   const { categories, loading: categoriesLoading } = useBlogCategories();
   const navigate = useNavigate();
 
@@ -14,16 +14,12 @@ export default function Blog() {
     navigate(`/blog/${slug}`);
   };
 
-  if (postsLoading || categoriesLoading || error) {
+  if (postsLoading || categoriesLoading) {
     return (
       <section id="blog" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center py-12">
-            {error ? (
-              <p className="text-red-600">Erro ao carregar posts: {error}</p>
-            ) : (
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500"></div>
-            )}
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500"></div>
           </div>
         </div>
       </section>
