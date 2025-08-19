@@ -4,6 +4,7 @@ import { Plus, Edit, Trash2, Eye, EyeOff, Search, Filter, Settings, Calendar, Us
 import ImageUpload from '@/react-app/components/admin/ImageUpload';
 import RichTextEditor from '@/react-app/components/admin/RichTextEditor';
 import CategoryManager from '@/react-app/components/admin/CategoryManager';
+import { useBlogPosts } from '@/react-app/hooks/useBlogPosts';
 
 interface Category {
   id: number;
@@ -39,42 +40,9 @@ const mockCategories: Category[] = [
   { id: 5, name: 'Direito Empresarial', slug: 'direito-empresarial', color: '#8b5cf6', post_count: 1, description: 'Compliance, contratos e direito societário' }
 ];
 
-// Mock posts data
-const mockPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: "Reforma Trabalhista: O que mudou para as empresas",
-    slug: "reforma-trabalhista-mudancas-empresas",
-    excerpt: "Entenda as principais mudanças da reforma trabalhista e como elas impactam as relações de trabalho nas empresas.",
-    content: "Conteúdo completo do artigo sobre reforma trabalhista...",
-    author: "Dr. Carlos Mendoza",
-    category: "Direito Trabalhista",
-    image_url: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f",
-    tags: ["Reforma Trabalhista", "Empresas", "Legislação"],
-    is_published: true,
-    read_time: "5 min",
-    created_at: "2024-01-15T10:00:00Z",
-    updated_at: "2024-01-15T10:00:00Z"
-  },
-  {
-    id: 2,
-    title: "LGPD: Como adequar sua empresa",
-    slug: "lgpd-adequacao-empresa",
-    excerpt: "Guia completo para adequar sua empresa à LGPD.",
-    content: "Conteúdo completo do artigo sobre LGPD...",
-    author: "Dra. Juliana Santos",
-    category: "Direito Digital",
-    image_url: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
-    tags: ["LGPD", "Proteção de Dados", "Compliance"],
-    is_published: true,
-    read_time: "7 min",
-    created_at: "2024-01-10T14:30:00Z",
-    updated_at: "2024-01-10T14:30:00Z"
-  }
-];
-
 export default function AdminBlog() {
-  const [posts, setPosts] = useState<BlogPost[]>(mockPosts);
+  const { posts: initialPosts, loading: postsLoading } = useBlogPosts();
+  const [posts, setPosts] = useState<BlogPost[]>([]);
   const [categories, setCategories] = useState<Category[]>(mockCategories);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterCategory, setFilterCategory] = useState('all');
@@ -94,6 +62,13 @@ export default function AdminBlog() {
     read_time: ''
   });
 
+  // Sync with initial posts from hook
+  useState(() => {
+    if (!postsLoading && initialPosts.length > 0) {
+      setPosts(initialPosts);
+    }
+  }, [initialPosts, postsLoading]);
+
   const tabs = [
     { id: 'posts', label: 'Posts', icon: Edit },
     { id: 'categories', label: 'Categorias', icon: Settings }
@@ -102,9 +77,14 @@ export default function AdminBlog() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    if (!formData.title.trim() || !formData.content.trim()) {
+      alert('Título e conteúdo são obrigatórios');
+      return;
+    }
+
     const postData = {
       title: formData.title,
-      slug: formData.slug,
+      slug: formData.slug || generateSlug(formData.title),
       excerpt: formData.excerpt || "",
       content: formData.content,
       author: formData.author,
@@ -135,6 +115,7 @@ export default function AdminBlog() {
         setPosts([newPost, ...posts]);
       }
       
+      alert(editingPost ? 'Post atualizado com sucesso!' : 'Post criado com sucesso!');
       setShowModal(false);
       resetForm();
     } catch (error) {
@@ -147,9 +128,12 @@ export default function AdminBlog() {
     if (!confirm('Tem certeza que deseja excluir este post?')) return;
 
     try {
-      setPosts(posts.filter(post => post.id !== id));
+      const updatedPosts = posts.filter(post => post.id !== id);
+      setPosts(updatedPosts);
+      alert('Post excluído com sucesso!');
     } catch (error) {
       console.error('Error deleting post:', error);
+      alert('Erro ao excluir post');
     }
   };
 
@@ -173,7 +157,7 @@ export default function AdminBlog() {
   const resetForm = () => {
     setFormData({
       title: '',
-      slug: '',
+      slug: '', 
       excerpt: '',
       content: '',
       author: '',
@@ -201,7 +185,7 @@ export default function AdminBlog() {
     setFormData(prev => ({
       ...prev,
       title,
-      slug: generateSlug(title)
+      slug: prev.slug || generateSlug(title)
     }));
   };
 
@@ -454,10 +438,10 @@ export default function AdminBlog() {
                         value={formData.slug}
                         onChange={(e) => setFormData(prev => ({ ...prev, slug: e.target.value }))}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-yellow-500 focus:border-yellow-500"
-                        placeholder="url-do-post"
+                        placeholder="url-do-post (gerado automaticamente)"
                       />
                       <p className="text-xs text-gray-500 mt-1">
-                        URL amigável para o post (gerada automaticamente)
+                        URL amigável para o post (deixe vazio para gerar automaticamente)
                       </p>
                     </div>
 

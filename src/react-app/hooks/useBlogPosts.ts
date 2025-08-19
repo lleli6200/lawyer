@@ -293,6 +293,27 @@ A CIPA é fundamental para a prevenção de acidentes e promoção da segurança
 
 const mockCategories = ["Direito Trabalhista", "Direito Digital", "Direito de Família", "Direito Empresarial", "Saúde e Segurança"];
 
+// Global posts state for admin management
+let globalPosts = [...mockPosts];
+
+export function updateGlobalPosts(newPosts: BlogPost[]) {
+  globalPosts = [...newPosts];
+}
+
+export function addGlobalPost(post: BlogPost) {
+  globalPosts = [post, ...globalPosts];
+}
+
+export function updateGlobalPost(updatedPost: BlogPost) {
+  globalPosts = globalPosts.map(post => 
+    post.id === updatedPost.id ? updatedPost : post
+  );
+}
+
+export function deleteGlobalPost(postId: number) {
+  globalPosts = globalPosts.filter(post => post.id !== postId);
+}
+
 export function useBlogPosts(category?: string) {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
@@ -306,9 +327,9 @@ export function useBlogPosts(category?: string) {
         // Simulate API delay
         await new Promise(resolve => setTimeout(resolve, 500));
         
-        let filteredPosts = mockPosts;
+        let filteredPosts = globalPosts;
         if (category && category !== 'all') {
-          filteredPosts = mockPosts.filter(post => post.category === category);
+          filteredPosts = globalPosts.filter(post => post.category === category);
         }
         
         setPosts(filteredPosts);
@@ -338,7 +359,7 @@ export function useBlogPost(slug: string) {
         // Simulate API delay
         await new Promise(resolve => setTimeout(resolve, 500));
         
-        const foundPost = mockPosts.find(p => p.slug === slug);
+        const foundPost = globalPosts.find(p => p.slug === slug);
         setPost(foundPost || null);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred');

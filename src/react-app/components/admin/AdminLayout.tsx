@@ -18,7 +18,7 @@ interface User {
 const mockUser: User = {
   id: 1,
   username: 'admin',
-  email: 'admin@olympusadvogados.com.br',
+  email: 'admin@cflsolucoes.com.br',
   role: 'Administrador'
 };
 

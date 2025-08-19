@@ -11,18 +11,18 @@ interface SiteSettings {
 
 // Mock settings data
 const mockSettings: SiteSettings = {
-  site_name: { value: 'OLYMPUS', type: 'text' },
-  site_description: { value: 'Excelência jurídica que você pode confiar', type: 'text' },
-  hero_title: { value: 'Excelência Jurídica Que Você Pode Confiar', type: 'text' },
-  hero_subtitle: { value: 'No Olympus Advogados, transformamos desafios jurídicos em soluções estratégicas. Sua segurança jurídica é nossa prioridade.', type: 'textarea' },
-  about_title: { value: 'Tradição e Inovação Jurídica', type: 'text' },
-  about_description: { value: 'Há mais de 25 anos oferecendo soluções jurídicas de excelência, combinando experiência consolidada com as mais modernas práticas do direito.', type: 'textarea' },
-  primary_color: { value: '#eab308', type: 'color' },
+  site_name: { value: 'CFL Centro de Soluções Empresariais', type: 'text' },
+  site_description: { value: 'Soluções empresariais completas - Consultoria jurídica e SST especializada', type: 'text' },
+  hero_title: { value: 'Consultoria jurídica e gestão de Saúde, Segurança e Meio Ambiente (SSMA)', type: 'text' },
+  hero_subtitle: { value: 'Oferecemos soluções empresariais completas com foco na excelência operacional. Nossa equipe multidisciplinar garante crescimento sustentável e conformidade legal para sua empresa.', type: 'textarea' },
+  about_title: { value: 'Soluções Empresariais Completas', type: 'text' },
+  about_description: { value: 'A CFL Centro de Soluções Empresariais oferece consultoria jurídica personalizada e serviços especializados em SST, garantindo crescimento sustentável e conformidade legal para sua empresa.', type: 'textarea' },
+  primary_color: { value: '#3b82f6', type: 'color' },
   secondary_color: { value: '#1f2937', type: 'color' },
-  contact_phone: { value: '(11) 3456-7890', type: 'text' },
-  contact_email: { value: 'contato@olympusadvogados.com.br', type: 'email' },
-  contact_address: { value: 'Av. Paulista, 1.400 - 15º andar\nBela Vista, São Paulo - SP\nCEP: 01310-100', type: 'textarea' },
-  whatsapp_number: { value: '5511987654321', type: 'text' }
+  contact_phone: { value: '(00) 0000-0000', type: 'text' },
+  contact_email: { value: 'contato@cflsolucoes.com.br', type: 'email' },
+  contact_address: { value: 'Endereço a ser definido\nCidade - Estado\nCEP: 00000-000', type: 'textarea' },
+  whatsapp_number: { value: '5500000000000', type: 'text' }
 };
 
 export default function AdminSettings() {
