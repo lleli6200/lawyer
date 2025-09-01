@@ -79,6 +79,16 @@ export default function Services() {
                 <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-8 h-8 text-gray-900" />
                 </div>
+                
+                <div className="text-center mt-6">
+                  <Link
+                    to="/sst"
+                    className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 font-semibold transition-colors group"
+                  >
+                    <span>Saiba Mais</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-4 text-center group-hover:text-blue-400 transition-colors">

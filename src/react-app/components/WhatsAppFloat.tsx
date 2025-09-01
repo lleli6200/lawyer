@@ -5,7 +5,7 @@ export default function WhatsAppFloat() {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "5500000000000"; // WhatsApp number in international format
+    const phoneNumber = "5531975595742"; // Carlos Giovani WhatsApp number in international format
     const message = "Olá! Gostaria de conhecer as soluções da CFL para minha empresa.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
