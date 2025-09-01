@@ -127,14 +127,21 @@ export default function SSTPage() {
       {/* About Fernando Brasil */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-blue-500/10 rounded-full px-6 py-2 mb-6">
+              <Award className="w-4 h-4 text-blue-600 mr-2" />
+              <span className="text-blue-600 text-sm font-medium uppercase tracking-wide">
+                Nossa Equipe SST
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Especialistas em <span className="text-blue-600">SST</span>
+            </h2>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Fernando Brasil */}
             <div>
-              <div className="inline-flex items-center bg-blue-500/10 rounded-full px-6 py-2 mb-6">
-                <Award className="w-4 h-4 text-blue-600 mr-2" />
-                <span className="text-blue-600 text-sm font-medium uppercase tracking-wide">
-                  Especialista SST
-                </span>
-              </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Fernando Brasil
               </h2>
@@ -178,6 +185,56 @@ export default function SSTPage() {
               <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-6 rounded-xl shadow-xl">
                 <h4 className="font-bold text-lg mb-2">Especialização</h4>
                 <p className="text-sm">Gerenciamento eficiente de normativos SST</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Leandro Moreira */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-20">
+            <div className="relative order-2 lg:order-1">
+              <img
+                src="/images/WhatsApp Image 2025-07-24 at 14.56.52.jpeg"
+                alt="Leandro Moreira Evangelista"
+                className="w-full h-96 object-cover object-center rounded-2xl shadow-2xl"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-blue-500 text-white p-6 rounded-xl shadow-xl">
+                <h4 className="font-bold text-lg mb-2">Especialização</h4>
+                <p className="text-sm">Gestão de Riscos Ocupacionais</p>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Leandro Moreira Evangelista
+              </h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Engenheiro de Segurança do Trabalho formado pela UFMG em 2004, com vasta experiência em 
+                <strong className="text-blue-600"> gestão de riscos ocupacionais e prevenção de acidentes</strong>. 
+                Especialista em criar ambientes de trabalho seguros e produtivos.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Sua abordagem técnica e metodológica garante a implementação eficaz de medidas preventivas, 
+                promovendo a saúde e segurança dos trabalhadores através de soluções inovadoras e 
+                conformidade com as normas regulamentadoras.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Engenheiro de Segurança do Trabalho - UFMG (2004)</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Especialista em gestão de riscos ocupacionais</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Prevenção de acidentes de trabalho</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Promoção da saúde no ambiente de trabalho</span>
+                </div>
               </div>
             </div>
           </div>
