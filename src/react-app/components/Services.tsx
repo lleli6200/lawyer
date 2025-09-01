@@ -1,52 +1,14 @@
-import { Building2, Users, Briefcase, ArrowRight } from 'lucide-react';
-import { HardHat, Shield, FileCheck } from 'lucide-react';
+import { Building2, Users, Briefcase, ArrowRight, HardHat, Shield, FileCheck } from 'lucide-react';
 import { Link } from 'react-router';
+import ServiceCard from '@/react-app/components/common/ServiceCard';
+import { companyServices, sstServices } from '@/react-app/data/mockData';
 
 export default function Services() {
-  const services = [
-    {
-      icon: Building2,
-      title: "Consultoria Jurídica Empresarial",
-      description: "Consultoria personalizada desde orientações do dia a dia até revisão completa das práticas empresariais, garantindo crescimento sustentável.",
-      features: ["Auditoria Trabalhista", "Elaboração de Contratos", "Defesa em Reclamações", "Plantão de Dúvidas"]
-    },
-    {
-      icon: Users,
-      title: "Auditoria e Compliance",
-      description: "Auditoria trabalhista com foco no cumprimento da legislação e prevenção do contencioso, incluindo normas de SST.",
-      features: ["Auditoria Trabalhista", "Compliance SST", "Políticas Internas", "Acompanhamento Perícias"]
-    },
-    {
-      icon: Briefcase,
-      title: "Suporte Operacional",
-      description: "Suporte jurídico completo em todas as operações empresariais, com foco preventivo e consultivo.",
-      features: ["Suporte Operacional", "Consultoria Preventiva", "Acompanhamento Contínuo", "Soluções Personalizadas"]
-    }
-  ];
+  const serviceIcons = [Building2, Users, Briefcase];
+  const sstIcons = [HardHat, Shield, FileCheck];
 
-  const sstServices = [
-    {
-      icon: HardHat,
-      title: "Treinamentos em SST",
-      description: "Os treinamentos de Segurança e Saúde no Trabalho (SST) são cruciais para a prevenção de acidentes e doenças ocupacionais, além de promoverem um ambiente de trabalho mais seguro e produtivo.",
-      features: ["Treinamentos Específicos", "Conscientização Equipes", "Capacitação Gestores", "Normas Regulamentadoras"]
-    },
-    {
-      icon: Shield,
-      title: "Gerenciamento de Riscos em SST",
-      description: "O gerenciamento de riscos em Segurança e Saúde no Trabalho (SST) é crucial para a prevenção de acidentes e doenças ocupacionais, promovendo um ambiente de trabalho mais seguro e saudável.",
-      features: ["Identificação de Riscos", "Avaliação e Controle", "Conformidade Legal", "Proteção Trabalhadores"]
-    },
-    {
-      icon: FileCheck,
-      title: "Avaliações Ambientais em SST",
-      description: "As avaliações ambientais em Segurança e Saúde no Trabalho (SST) são cruciais para identificar e controlar riscos ambientais, prevenindo doenças ocupacionais e acidentes.",
-      features: ["Análise Ambiental", "Controle de Riscos", "Prevenção Doenças", "Proteção Ambiental"]
-    }
-  ];
   return (
     <section id="services" className="py-20 relative overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0">
         <img 
           src="https://mocha-cdn.com/019837ea-6653-789d-b2b6-1920481adc12/services-bg-courtroom.jpg"
@@ -55,6 +17,7 @@ export default function Services() {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-black/95"></div>
       </div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 rounded-full px-6 py-2 mb-6">
@@ -67,47 +30,19 @@ export default function Services() {
             Soluções Empresariais <span className="text-blue-400">Completas</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Oferecemos consultoria jurídica personalizada e serviços especializados em SST, 
-            garantindo crescimento sustentável e conformidade legal para sua empresa.
+            Oferecemos consultoria jurídica personalizada e serviços especializados em SST.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
-              <div className="flex items-center justify-center mb-6">
-                <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-8 h-8 text-gray-900" />
-                </div>
-                
-                <div className="text-center mt-6">
-                  <Link
-                    to="/sst"
-                    className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 font-semibold transition-colors group"
-                  >
-                    <span>Saiba Mais</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
-              
-              <h3 className="text-xl font-bold text-white mb-4 text-center group-hover:text-blue-400 transition-colors">
-                {service.title}
-              </h3>
-              
-              <p className="text-gray-300 mb-6 leading-relaxed text-center">
-                {service.description}
-              </p>
-              
-              <div className="space-y-2 mb-6">
-                {service.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
-                    <span className="text-gray-400 text-sm">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {companyServices.map((service, index) => (
+            <ServiceCard
+              key={index}
+              icon={serviceIcons[index]}
+              title={service.title}
+              description={service.description}
+              features={service.features}
+            />
           ))}
         </div>
 
@@ -117,39 +52,28 @@ export default function Services() {
               Conheça Também Nossos Serviços de SST
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Oferecemos também serviços especializados em Saúde e Segurança do Trabalho, 
-              incluindo treinamentos, gerenciamento de riscos e avaliações ambientais.
+              Oferecemos também serviços especializados em Saúde e Segurança do Trabalho.
             </p>
             
-            {/* SST Services Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
               {sstServices.map((service, index) => (
-                <div key={index} className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
-                  <div className="flex items-center justify-center mb-6">
-                    <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                      <service.icon className="w-8 h-8 text-white" />
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-white mb-4 text-center group-hover:text-blue-400 transition-colors">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-gray-300 mb-6 leading-relaxed text-center">
-                    {service.description}
-                  </p>
-                  
-                  <div className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
-                        <span className="text-gray-400 text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <ServiceCard
+                  key={index}
+                  icon={sstIcons[index]}
+                  title={service.title}
+                  description={service.description}
+                  features={service.features}
+                />
               ))}
             </div>
+            
+            <Link
+              to="/sst"
+              className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 font-semibold transition-colors group"
+            >
+              <span>Saiba Mais sobre SST</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </div>

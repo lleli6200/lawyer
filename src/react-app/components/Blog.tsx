@@ -2,6 +2,7 @@ import { Calendar, User, ArrowRight, Clock, Tag } from 'lucide-react';
 import { useState } from 'react';
 import { useBlogPosts, useBlogCategories } from '@/react-app/hooks/useBlogPosts';
 import { useNavigate } from 'react-router';
+import SectionHeader from '@/react-app/components/common/SectionHeader';
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -10,9 +11,6 @@ export default function Blog() {
   const navigate = useNavigate();
 
   const allCategories = ['all', ...categories];
-  const handleReadMore = (slug: string) => {
-    navigate(`/blog/${slug}`);
-  };
 
   if (postsLoading || categoriesLoading) {
     return (
@@ -29,21 +27,12 @@ export default function Blog() {
   return (
     <section id="blog" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-blue-500/10 rounded-full px-6 py-2 mb-6">
-            <Calendar className="w-4 h-4 text-blue-600 mr-2" />
-            <span className="text-blue-600 text-sm font-medium uppercase tracking-wide">
-              Blog Empresarial
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Conhecimento <span className="text-blue-600">Empresarial</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Mantenha-se atualizado com as últimas novidades em direito empresarial e SST. 
-            Artigos especializados para orientar sua empresa.
-          </p>
-        </div>
+        <SectionHeader
+          icon={Calendar}
+          badge="Blog Empresarial"
+          title="Conhecimento Empresarial"
+          subtitle="Mantenha-se atualizado com as últimas novidades em direito empresarial e SST."
+        />
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -73,7 +62,7 @@ export default function Blog() {
               <article key={post.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
                 <div className="relative overflow-hidden">
                   <img
-                    src={post.image_url || "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"}
+                    src={post.image_url}
                     alt={post.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -104,9 +93,7 @@ export default function Blog() {
                     {post.title}
                   </h3>
                   
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {post.excerpt}
-                  </p>
+                  <p className="text-gray-600 mb-4 leading-relaxed">{post.excerpt}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {post.tags.map((tag, index) => (
@@ -118,7 +105,7 @@ export default function Blog() {
                   </div>
                   
                   <button
-                    onClick={() => handleReadMore(post.slug)}
+                    onClick={() => navigate(`/blog/${post.slug}`)}
                     className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors group"
                   >
                     <span>Ler mais</span>
@@ -129,7 +116,6 @@ export default function Blog() {
             ))}
           </div>
         )}
-
       </div>
     </section>
   );
