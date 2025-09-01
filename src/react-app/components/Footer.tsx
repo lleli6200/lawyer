@@ -36,20 +36,6 @@ export default function Footer() {
               Oferecemos consultoria jurídica personalizada e serviços especializados em SST, 
               garantindo crescimento sustentável e conformidade legal.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="bg-white/10 hover:bg-blue-500/20 p-2 rounded-lg transition-colors group">
-                <Facebook className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
-              </a>
-              <a href="#" className="bg-white/10 hover:bg-blue-500/20 p-2 rounded-lg transition-colors group">
-                <Instagram className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
-              </a>
-              <a href="#" className="bg-white/10 hover:bg-blue-500/20 p-2 rounded-lg transition-colors group">
-                <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
-              </a>
-              <a href="#" className="bg-white/10 hover:bg-blue-500/20 p-2 rounded-lg transition-colors group">
-                <Youtube className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
-              </a>
-            </div>
           </div>
 
           {/* Services */}
@@ -85,21 +71,15 @@ export default function Footer() {
             <h4 className="text-lg font-bold text-white mb-6">Contato</h4>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-gray-300 text-sm">
-                    Endereço a ser definido<br />
-                    Cidade - Estado<br />
-                    CEP: 00000-000
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-blue-400" />
                 <div>
-                  <p className="text-gray-300 text-sm">(00) 0000-0000</p>
-                  <p className="text-gray-400 text-xs">Segunda a Sexta: 8h às 18h</p>
+                  <p className="text-gray-300 text-sm font-medium mb-2">Nossos Contatos:</p>
+                  <div className="space-y-1">
+                    <p className="text-gray-300 text-sm">Carlos Giovani: (31) 7559-5742</p>
+                    <p className="text-gray-300 text-sm">Fernando Brasil: (31) 9246-5739</p>
+                    <p className="text-gray-300 text-sm">Leandro: (31) 8392-8274</p>
+                  </div>
+                  <p className="text-gray-400 text-xs mt-2">Segunda a Sexta: 8h às 18h</p>
                 </div>
               </div>
               
@@ -117,9 +97,6 @@ export default function Footer() {
           <div className="text-center">
               <p className="text-gray-400 text-sm">
                 © 2025 CFL Centro de Soluções Empresariais. Todos os direitos reservados.
-              </p>
-              <p className="text-gray-500 text-xs mt-1">
-                CNPJ: 00.000.000/0001-00
               </p>
           </div>
         </div>
